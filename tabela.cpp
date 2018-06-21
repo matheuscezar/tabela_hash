@@ -9,7 +9,7 @@ using namespace std;
 
 int main(){
 	srand(time(0));
-	ListaLigada<string> *tabela[53];
+	ListaLigada<string> tabela[53];
 	int i = 0;
 	int pos;
 	int aux;
@@ -22,15 +22,18 @@ int main(){
 
 	while(cin>>entrada){
 	acumulador=0;
+	i=0;
+	//cout<< "entrada: " << entrada << endl;
 		char_entrada=&entrada[0];
 		tamanho_entrada=strlen(char_entrada);
+		//cout << "Tamanho da entrada " << tamanho_entrada << endl; 
 		while(i<tamanho_entrada){
 			acumulador = acumulador + (int)char_entrada[i];
 			i++;		
 		}
+	//cout << "tamanho da string: " << acumulador << endl; 
 	pos=acumulador%53;
-	tabela[contador]->InsereNoFinal(entrada);
-	contador++;
+	tabela[pos].InsereNoFinal(entrada);
 	}
 
 
@@ -39,7 +42,9 @@ int main(){
 	//Imprimindo tabela hash
 	cout << "Imprimindo tabela hash" << endl;
 	while(i<53){
-		cout << *tabela[i] << endl;
+		cout << "Posicao " << i<<":" << "\n";
+		cout << tabela[i];
+		i++;
 	}
 
 

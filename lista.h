@@ -39,7 +39,7 @@ Node<T>::Node(T _valor) : valor(_valor), proximo(nullptr) {}
 
 template <typename T>
 Node<T>::~Node() {
-	cout << "Node(" << valor << ") removido." << endl;
+	//cout << "Node(" << valor << ") removido." << endl;
 }
 
 template <typename T>
@@ -212,7 +212,7 @@ template <typename T>
 std::ostream& operator<< ( std::ostream& o, ListaLigada<T> const &l) {
 	auto atual = l.cabeca;
 	while (atual != l.cauda) {
-		o << atual->getValor() << " ";
+		o << atual->getValor() << "\n";
 		atual = atual->getNext();
 	}
 	return o;
